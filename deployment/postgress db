@@ -1,0 +1,50 @@
+### DATABASE LINKS
+# https://www.ntu.edu.sg/home/ehchua/programming/sql/PostgreSQL_GetStarted.html
+
+### DIGITAL OCEAN LINKS
+# https://www.digitalocean.com/community/tutorials/how-to-use-roles-and-manage-grant-permissions-in-postgresql-on-a-vps--2
+
+### YOUTUBE
+https://www.youtube.com/watch?v=qw--VYLpxG4&t=13474s
+
+### CREATE DB
+CREATE DATABASE test_db;
+
+### DROP DB
+DROP DATABASE test_db;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=papli
+Group=papli
+WorkingDirectory=/home/papli/papli-production-PH/GisServer
+ExecStart=/home/papli/papli-production-PH/GisServer/venv/bin/gunicorn \
+    --access-logfile /home/papli/papli-production-PH/GisServer/logs/gunicorn_main.log \
+    --workers 12 \
+    --bind unix:/home/papli/papli-production-PH/GisServer/run/gunicorn_main.sock \
+    GisServer.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

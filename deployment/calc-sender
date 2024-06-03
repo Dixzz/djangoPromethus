@@ -1,0 +1,10 @@
+Installation for distance Calculations
+
+sudo apt-get install aptitude
+https://askubuntu.com/a/532852/964199
+
+https://realpython.com/location-based-app-with-geodjango-tutorial/
+sudo aptitude install gdal-bin libgdal-dev
+sudo aptitude install python3-gdal
+
+

@@ -1,0 +1,185 @@
+### LeafLet Documentation
+"""
+https://django-leaflet.readthedocs.io/en/latest/installation.html
+"""
+
+DIGITAL OCEAN DOCUMENTATION
+-----------------------------
+https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
+
+
+CONFIGRATION for USER
+----------------------
+https://raw.githubusercontent.com/Prady96/server-private/master/setup_SFTP_in_GCP.txt?token=AHIVHIJV26E2IEPEQJKCI2S6F4JSA
+
+
+sudo apt-get install python3.5-dev
+
+
+Installation Commands
+---------------------
+
+Download and Install POSTG
+
+1.  sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx
+2.  Install POSTGIS -- https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS24UbuntuPGSQL10Apt
+
+Go with this video while installation 'https://www.youtube.com/watch?v=35i9nXyg9cw'
+
+***** DO INSTALL 
+sudo apt-get install postgis
+sudo apt-get install postgresql-9.5-postgis
+
+Reference Links
+https://docs.qgis.org/2.8/en/docs/training_manual/spatial_databases/spatial_functions.html
+https://docs.qgis.org/3.10/en/docs/
+*****
+
+3.
+login
+$ sudo -u postgres psql
+
+4.
+### DOCUMENTATION for database GIS Server
+"""
+postgres=# CREATE DATABASE recieverdb;
+CREATE DATABASE
+postgres=# CREATE USER papli WITH PASSWORD 'harebol@123';
+CREATE ROLE
+postgres=# ALTER ROLE papli SET client_encoding TO 'utf8';
+ALTER ROLE
+postgres=# ALTER ROLE papli SET default_transaction_isolation TO 'read committed';
+ALTER ROLE
+postgres=# ALTER ROLE papli SET timezone TO 'Asia/Kolkata';
+ALTER ROLE
+postgres=# GRANT ALL PRIVILEGES ON DATABASE recieverdb TO papli;
+GRANT
+postgres=# ALTER DATABASE recieverdb OWNER TO papli;
+ALTER DATABASE
+postgres=# ALTER ROLE papli SUPERUSER;
+ALTER ROLE
+"""
+
+5.PostGIS Configration
+------------------------
+url -- https://postgis.net/install/
+
+# CREATE EXTENSION postgis;
+# CREATE EXTENSION postgis_raster;
+# CREATE EXTENSION postgis_topology;
+
+
+6. Define Static Root
+
+7. 
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver
+python3 manage.py createsuperuser
+python3 manage.py collectstatic
+
+#### TROUBLESHOOTING
+python manage.py migrate --run-syncdb
+python manage.py migrate --fake
+
+8.
+gunicorn file
+"""
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=papli
+Group=papli
+WorkingDirectory=/home/papli/papli-production-PH/GisServer
+ExecStart=/home/papli/papli-production-PH/GisServer/venv/bin/gunicorn \
+    --access-logfile /home/papli/papli-production-PH/GisServer/logs/gunicorn_main.log \
+    --workers 12 \
+    --bind unix:/home/papli/papli-production-PH/GisServer/run/gunicorn_main.sock \
+    GisServer.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+"""
+
+9.
+sudo systemctl start gunicorn
+sudo systemctl enable gunicorn
+sudo systemctl status gunicorn
+
+
+### Trouble Shooting Commands for Gunicorn
+sudo systemctl restart gunicorn
+sudo systemctl daemon-reload
+
+10.
+Nginx Server Setup
+
+# sudo vim /etc/nginx/sites-available/receiver
+
+"""
+server {
+	listen 80;
+	server_name 35.200.190.208;
+	client_max_body_size 100M;
+
+	access_log /home/papli/papli-production-PH/GisServer/logs/nginx-access.log;
+	error_log /home/papli/papli-production-PH/GisServer/logs/nginx-error.log;
+
+	location /static/ {
+		alias	/home/papli/papli-production-PH/GisServer/GisServer/static/;
+	}
+
+	location / {
+		include proxy_params;
+		proxy_pass http://unix:/home/papli/papli-production-PH/GisServer/run/gunicorn_main.sock;
+	}
+
+}
+
+"""
+##### Check syntax
+# sudo nginx -t
+# sudo systemctl restart nginx
+
+
+11.
+After each update
+sudo systemctl restart nginx
+sudo systemctl restart gunicorn
+
+12.
+TroubleShoooting for installation
+-------------------------------------------------
+pip install psycopg2
+https://stackoverflow.com/a/39800677/7999665
+-------------------------------------------------
+pip install django-storages/[google]
+-------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

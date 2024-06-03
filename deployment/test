@@ -1,0 +1,29 @@
+[{'name': <RecievingPotholeImages: 9f7cd457-ac2c-4c94-be5e-77a88e9b8e4b>,
+ 'updated_image': <ImageFieldFile: GIS/Updated/2020-01-29/b34d65b2-b560-446e-8272-379fa5ec1a9e.jpeg>,
+  'cordinate_X': Decimal('28.5521330000000000'), 
+  'cordinate_Y': Decimal('77.2422890000000000'),
+   'road_name': 'road_name_delhi',
+    'created_date': datetime.datetime(2020, 1, 29, 4, 47, 25, 911713, tzinfo=<UTC>),
+     'is_filled': True,
+      'checked': False,
+       'rawImage': <ImageFieldFile: GIS/Raw/2020-01-28/3085a3db-0a76-48f7-a311-50710beeb031.jpeg>,
+        'maskedImage': <ImageFieldFile: GIS/Processed/2020-01-28/f08f3023-6075-42a0-bace-e979bd498e53.jpeg>}]
+
+[{'name': {'name': '9f7cd457-ac2c-4c94-be5e-77a88e9b8e4b', 'area': 100, 'number': 10, 'country_name': 'india', 'state_name': 'delhi', 'cordinate_X': Decimal('28.5521330000000000'), 'cordinate_Y': Decimal('77.2422890000000000'), 'road_name': 'delhi', 'ROwner': 'supertest', 'rawImage': <ImageFieldFile: GIS/Raw/2020-01-28/3085a3db-0a76-48f7-a311-50710beeb031.jpeg>, 'maskedImage': <ImageFieldFile: GIS/Processed/2020-01-28/f08f3023-6075-42a0-bace-e979bd498e53.jpeg>}, 'updated_image': <ImageFieldFile: GIS/Updated/2020-01-29/b34d65b2-b560-446e-8272-379fa5ec1a9e.jpeg>, 'cordinate_X': Decimal('28.5521330000000000'), 'cordinate_Y': Decimal('77.2422890000000000'), 'road_name': 'road_name_delhi', 'created_date': datetime.datetime(2020, 1, 29, 4, 47, 25, 911713, tzinfo=<UTC>), 'is_filled': True, 'checked': False, 'rawImage': <ImageFieldFile: GIS/Raw/2020-01-28/3085a3db-0a76-48f7-a311-50710beeb031.jpeg>, 'maskedImage': <ImageFieldFile: GIS/Processed/2020-01-28/f08f3023-6075-42a0-bace-e979bd498e53.jpeg>}]
+
+
+{
+    "models_to_return": [
+        {
+            "id": 1,
+            "name_id": "9f7cd457-ac2c-4c94-be5e-77a88e9b8e4b",
+            "updated_image": "GIS/Updated/2020-01-29/b34d65b2-b560-446e-8272-379fa5ec1a9e.jpeg",
+            "cordinate_X": "28.5521330000000000",
+            "cordinate_Y": "77.2422890000000000",
+            "road_name": "road_name_delhi",
+            "created_date": "2020-01-29T04:47:25.911Z",
+            "is_filled": true,
+            "checked": false
+        }
+    ]
+}

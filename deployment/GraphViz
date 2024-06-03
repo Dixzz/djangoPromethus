@@ -1,0 +1,67 @@
+## Installaton for django extensions
+brew install graphviz
+
+
+$ pip install django-extensions
+
+/Users/pradyumgupta/github/GIS/papli-production-PH/GisServer/venv
+
+
+include  : /Users/pradyumgupta/github/GIS/papli-production-PH/GisServer/venv/include/
+lib      : /Users/pradyumgupta/github/GIS/papli-production-PH/GisServer/venv/lib/
+
+$ pip install --install-option="--include-path=/Users/pradyumgupta/github/GIS/papli-production-PH/GisServer/venv/include/" --install-option="--library-path=/Users/pradyumgupta/github/GIS/papli-production-PH/GisServer/venv/lib/" pygraphviz
+
+$ pip install pyparsing pydot
+
+Put  ``django-extensions`` inside ``INSTALLED - APPLICATIONS``
+
+### Documentation for GraphViz
+https://django-extensions.readthedocs.io/en/latest/graph_models.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

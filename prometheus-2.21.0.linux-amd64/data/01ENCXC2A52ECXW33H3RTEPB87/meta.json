@@ -1,0 +1,17 @@
+{
+	"ulid": "01ENCXC2A52ECXW33H3RTEPB87",
+	"minTime": 1603519200000,
+	"maxTime": 1603526400000,
+	"stats": {
+		"numSamples": 7200,
+		"numSeries": 10,
+		"numChunks": 60
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01ENCXC2A52ECXW33H3RTEPB87"
+		]
+	},
+	"version": 1
+}

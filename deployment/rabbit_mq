@@ -1,0 +1,29 @@
+
+
+https://timbull.com/build-a-processing-queue-with-multi-threading-and-spread-over-multiple-servers-in-less-than-a-day-26b0d7f5613b
+
+Stackoverflow link
+https://stackoverflow.com/a/52295727/7999665
+
+
+sudo apt-get install -y rabbitmq-server
+
+sudo rabbitmqctl add_user testUser harebol@123
+
+sudo rabbitmqctl set_user_tags testUser administrator
+
+sudo rabbitmqctl set_permissions -p / testUser ".*" ".*" ".*"
+
+sudo rabbitmqctl add_vhost Vhost
+
+### Status of rabbitmqctl
+sudo rabbitmqctl status
+
+### Start Server rabbitmqctl ( Start )
+ sudo rabbitmq-server
+
+### Stop Server rabbitmqctl
+ sudo rabbitmq-server stop
+
+
+

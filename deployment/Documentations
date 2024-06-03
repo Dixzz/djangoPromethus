@@ -1,0 +1,56 @@
+#### South for Migrations
+https://south.readthedocs.io/en/latest/installation.html#using-pip-or-easy-install
+
+
+### import and export data using CSV
+https://www.enterprisedb.com/postgres-tutorials/how-import-and-export-data-using-csv-files-postgresql
+
+### backup database
+https://www.linode.com/docs/databases/postgresql/how-to-back-up-your-postgresql-database/
+
+### Used Primary Key
+Change the Primary Key of Column by changing its name
+````
+    name          = models.CharField(max_length = 100, unique = True, primary_key=True)
+````
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
